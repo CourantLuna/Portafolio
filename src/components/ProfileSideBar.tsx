@@ -1,4 +1,3 @@
-import React from "react";
 
 // Imagen de perfil (usa la tuya, estática o desde assets)
 const avatar = "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Imagen%20Perfil%20Heydi-wdvTY9giOH5eQ2lRdG9M4ct0tOMrB8.png";

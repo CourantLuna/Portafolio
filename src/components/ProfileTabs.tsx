@@ -1,5 +1,4 @@
 // src/components/ProfileTabs.tsx
-import React from "react";
 
 interface ProfileTabsProps {
   activeTab: number;
