@@ -17,7 +17,7 @@ export default function AppBar() {
   const toggleTheme = () => setDark(!dark);
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/80 lg:bg-transparent backdrop-blur ">
+    <header className="fixed top-0 left-0 w-full z-50 bg-info lg:bg-transparent backdrop-blur ">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo/nombre */}
         <div className="flex items-center gap-2">

@@ -83,7 +83,7 @@ export default function ProfileSidebar() {
       </div>
       {/* Botón CV */}
       <a
-        href="/cvHG24 - ES Vcompressed.pdf"
+          href="/public/cvHG24-ES.pdf"
         download
         className="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-xl text-center font-semibold shadow-md hover:from-pink-600 hover:to-pink-500 transition"
       >
