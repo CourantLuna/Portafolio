@@ -55,8 +55,8 @@ const tabs = [
 
 export default function ProfileTabs({ activeTab, setActiveTab }: ProfileTabsProps) {
   return (
-    <div className="w-full flex justify-end">
-      <div className="bg-white rounded-3xl px-2 py-4 flex gap-4 shadow-lg">
+    <div className="hidden lg:block w-full flex justify-end">
+      <div className="bg-white rounded-3xl px-8 py-8 flex gap-4 shadow-lg">
         {tabs.map((tab, idx) => (
           <button
             key={tab.label}

@@ -28,7 +28,7 @@ const socialLinks = [
 
 export default function ProfileSidebar() {
   return (
-    <aside className="mt-16 w-full mx-auto bg-white lg:rounded-3xl shadow-2xl px-6 py-8 flex flex-col items-center relative z-10">
+    <aside className="mt-70 lg:mt-30  w-full mx-auto bg-white lg:rounded-3xl shadow-2xl px-6 py-8 flex flex-col items-center relative z-10 gap-2">
       {/* Avatar */}
       <div className="-mt-35 mb-3">
         <img

@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -16,6 +17,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@layer utilities {
+  .animate-slide-down {
+    animation: slideDown 0.27s cubic-bezier(.4,0,.2,1);
+  }
+  @keyframes slideDown {
+    0% { transform: translateY(-40px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+}
+
+
 
 /* a {
   font-weight: 500;

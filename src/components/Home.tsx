@@ -65,7 +65,7 @@ export default function Home() {
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-4">
           About Me
-          <span className="flex-1 border-t border-pink-400 ml-3" />
+          <span className="w-[200px] border-t-3 border-pink-400" />
         </h2>
         <p className="text-gray-800 mb-2">
           Soy Desarrolladora Full Stack y estudiante de Ingeniería en Software y Mecatrónica en INTEC (RD). Apasionada por la tecnología, la automatización y la docencia STEAM. 
