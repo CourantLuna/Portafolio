@@ -36,6 +36,7 @@ const translations = {
     'profile.location': 'Ubicación',
     'profile.email': 'Correo',
     'profile.birthday': 'Cumpleaños',
+    'profile.birthdayDate': '11 de noviembre de 2001',
     'profile.downloadCV': 'Ver Curriculum',
     
     // Home
@@ -202,6 +203,7 @@ const translations = {
     'profile.location': 'Location',
     'profile.email': 'Email',
     'profile.birthday': 'Birthday',
+    'profile.birthdayDate': 'November 11, 2001',
     'profile.downloadCV': 'Download CV',
     
     // Home

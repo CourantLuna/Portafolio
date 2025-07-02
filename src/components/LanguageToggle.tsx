@@ -32,7 +32,10 @@ export default function LanguageToggle() {
         aria-label={t('language.toggle')}
       >
         {/* Background flags */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0"
+         
+        
+        >
           {/* Spanish flag background - when ES is active */}
           <div className={`absolute inset-0 transition-all duration-300 overflow-hidden ${
             language === 'es' ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -63,8 +66,8 @@ export default function LanguageToggle() {
           }`}
           style={{
             boxShadow: '0px 1px 3px 4px rgba(0,0,0,0.18) inset, 0px 2px 40px 10px rgba(0,0,0,0.88)',
-            WebkitBoxShadow: '0px 0px 6px 3px rgba(0,0,0,0.18) inset, 0px 2px 65px 15px rgba(0,0,0,0.88)',
-            MozBoxShadow: '5px 2px 4px px rgba(0,0,0,0.18) inset, 0px 2px 80px 10px rgba(0,0,0,0.88)'
+            WebkitBoxShadow: '0px 0px 6px 3px rgba(0,0,0,0.18) inset, 0px 2px 60px 15px rgba(0,0,0,0.88)',
+            MozBoxShadow: '5px 2px 4px px rgba(0,0,0,0.18) inset, 0px 2px 80px 20px rgba(0,0,0,0.88)'
           }}
         >
         </div>

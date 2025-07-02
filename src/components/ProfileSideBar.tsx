@@ -90,7 +90,7 @@ export default function ProfileSidebar() {
         <InfoRow
           icon="fa-birthday-cake"
           label={t('profile.birthday')}
-          value="11 de agosto de 2001"
+          value={t('profile.birthdayDate')}
           color="text-violet-400 dark:text-violet-300 bg-violet-100 dark:bg-violet-900/30 dark:border dark:border-violet-500/30"
         />
       </div>
