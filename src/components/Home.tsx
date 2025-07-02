@@ -13,7 +13,7 @@ import {
 // Puedes usar logos locales en /assets o urls de logos de clientes/empresas reales
 const clients = [
   { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-minerd-4b4uXag4qedx5ioOVlk3xhjK8Gz2P5.png", alt: "MINERD" },
-  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-dida-3K8Qt6Wt5iKBXILQAPgGXC36evORa0.png", alt: "DIDA" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Dida%20Logo-EFtNhHmOa5h1OKQto60erQskPFiOhL.png", alt: "DIDA" },
   { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-lamschool-qo8l6nS5cFK3B06XxqQ0YVhmbeiU7T.png", alt: "LAM School" },
   { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-hanesinc-7wCVZVMiCIJwvHurDI2yv2JvsgHlV4.png", alt: "Hanesbrands" },
   { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-asfales-HxyNAE8SvnfyLlrF42WaBW4ShGEXIJ.png", 
@@ -35,75 +35,75 @@ const clients = [
 
 const skills = [
   {
-    icon: <FaLaptopCode size={32} className="text-violet-400" />,
+    icon: <FaLaptopCode size={32} className="text-violet-400 dark:text-violet-300" />,
     title: "Desarrollo Fullstack",
     desc: "React, Next.js, Node.js, C#, .NET, Angular, TypeScript y bases de datos SQL/NoSQL.",
-    bg: "bg-violet-50",
+    bg: "bg-violet-50 dark:bg-violet-900/20 dark:border dark:border-violet-500/30 dark:shadow-lg dark:shadow-violet-500/20",
   },
   {
-    icon: <FaCogs size={32} className="text-yellow-400" />,
+    icon: <FaCogs size={32} className="text-yellow-400 dark:text-yellow-300" />,
     title: "Automatización y 3D",
     desc: "Automatización industrial, microcontroladores, diseño e impresión 3D.",
-    bg: "bg-yellow-50",
+    bg: "bg-yellow-50 dark:bg-yellow-900/20 dark:border dark:border-yellow-500/30 dark:shadow-lg dark:shadow-yellow-500/20",
   },
   {
-    icon: <FaChalkboardTeacher size={32} className="text-blue-400" />,
+    icon: <FaChalkboardTeacher size={32} className="text-blue-400 dark:text-blue-300" />,
     title: "Docencia STEAM",
     desc: "Capacitación de docentes y estudiantes en robótica, tecnología y pensamiento computacional.",
-    bg: "bg-blue-50",
+    bg: "bg-blue-50 dark:bg-blue-900/20 dark:border dark:border-blue-500/30 dark:shadow-lg dark:shadow-blue-500/20",
   },
   {
-    icon: <FaRobot size={32} className="text-pink-400" />,
+    icon: <FaRobot size={32} className="text-pink-400 dark:text-pink-300" />,
     title: "Robótica Educativa",
     desc: "Implementación de kits LEGO, Arduino y desarrollo de currículos STEAM.",
-    bg: "bg-pink-50",
+    bg: "bg-pink-50 dark:bg-pink-900/20 dark:border dark:border-pink-500/30 dark:shadow-lg dark:shadow-pink-500/20",
   },
   {
-    icon: <FaPaintBrush size={32} className="text-pink-400" />,
+    icon: <FaPaintBrush size={32} className="text-pink-400 dark:text-pink-300" />,
     title: "UI/UX Design",
     desc: "Prototipado con Figma, heurísticas de usabilidad y accesibilidad.",
-    bg: "bg-pink-100",
+    bg: "bg-pink-100 dark:bg-pink-900/25 dark:border dark:border-pink-500/40 dark:shadow-lg dark:shadow-pink-500/25",
   },
   {
-    icon: <FaDatabase size={32} className="text-blue-400" />,
+    icon: <FaDatabase size={32} className="text-blue-400 dark:text-blue-300" />,
     title: "Bases de Datos",
     desc: "Diseño y gestión de bases de datos relacionales y no relacionales.",
-    bg: "bg-blue-100",
+    bg: "bg-blue-100 dark:bg-blue-900/25 dark:border dark:border-blue-500/40 dark:shadow-lg dark:shadow-blue-500/25",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="w-full flex flex-col gap-10">
+    <div className="w-full flex flex-col gap-10 dark:text-gray-100">
       {/* ABOUT ME */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
           Sobre mí
-          <span className="w-[200px] border-t-3 border-pink-400" />
+          <span className="w-[200px] border-t-3 border-pink-400 dark:border-pink-300" />
         </h2>
-        <p className="text-gray-800 mb-2">
+        <p className="text-gray-800 dark:text-gray-200 mb-2">
           Soy Desarrolladora Full Stack y estudiante de Ingeniería en Software y Mecatrónica en INTEC (RD). Apasionada por la tecnología, la automatización y la docencia STEAM. 
         </p>
-        <p className="text-gray-700 mb-2">
+        <p className="text-gray-700 dark:text-gray-300 mb-2">
           Experiencia en C#, JavaScript, Python, React, Next.js, Angular, .NET, diseño electrónico, robótica educativa, impresión 3D y gestión de proyectos bajo metodologías ágiles. 
         </p>
-        <p className="text-gray-700">
+        <p className="text-gray-700 dark:text-gray-300">
           Actualmente contribuyo en el sector educativo y privado, desarrollando soluciones tecnológicas para empresas, instituciones y proyectos personales innovadores.
         </p>
       </section>
       {/* WHAT I DO */}
       <section>
-        <h2 className="text-2xl font-mono font-bold text-gray-900 mb-5">¡LO QUE HAGO!</h2>
+        <h2 className="text-2xl font-mono font-bold text-gray-900 dark:text-gray-100 mb-5">¡LO QUE HAGO!</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {skills.map((skill) => (
             <div
               key={skill.title}
-              className={`rounded-xl p-4 flex items-start gap-3 ${skill.bg} shadow`}
+              className={`rounded-xl p-4 flex items-start gap-3 ${skill.bg} shadow dark:backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}
             >
               {skill.icon}
               <div>
-                <h3 className="font-semibold text-gray-900 text-lg mb-1">{skill.title}</h3>
-                <p className="text-sm text-gray-700">{skill.desc}</p>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-lg mb-1">{skill.title}</h3>
+                <p className="text-sm text-gray-700 dark:text-gray-300">{skill.desc}</p>
               </div>
             </div>
           ))}
@@ -111,8 +111,8 @@ export default function Home() {
       </section>
       {/* CLIENTS */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">Mis clientes</h2>
-        <div className="bg-gray-50 p-6 rounded-xl overflow-hidden">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Mis clientes</h2>
+        <div className="bg-gray-50 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:shadow-lg dark:shadow-pink-500/10 p-6 rounded-xl overflow-hidden backdrop-blur-sm">
           <div className="flex animate-slide-infinite">
             {/* Primera copia de las imágenes */}
             {clients.map((c) => (
@@ -120,7 +120,7 @@ export default function Home() {
                 key={c.alt}
                 src={c.src}
                 alt={c.alt}
-                className="h-16 object-contain mx-8 flex-shrink-0"
+                className="h-16 object-contain mx-8 flex-shrink-0 dark:brightness-90 dark:contrast-110"
                 style={{ maxWidth: 120 }}
               />
             ))}
@@ -130,7 +130,7 @@ export default function Home() {
                 key={`${c.alt}-duplicate`}
                 src={c.src}
                 alt={c.alt}
-                className="h-16 object-contain mx-8 flex-shrink-0"
+                className="h-16 object-contain mx-8 flex-shrink-0 dark:brightness-90 dark:contrast-110"
                 style={{ maxWidth: 120 }}
               />
             ))}
@@ -138,7 +138,7 @@ export default function Home() {
         </div>
       </section>
       {/* FOOTER */}
-      <footer className="text-center text-gray-400 text-xs pt-8">
+      <footer className="text-center text-gray-400 dark:text-gray-500 text-xs pt-8">
         © {new Date().getFullYear()} Heydi García | Portafolio Personal
       </footer>
     </div>

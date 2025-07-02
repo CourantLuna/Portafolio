@@ -56,16 +56,16 @@ const tabs = [
 export default function ProfileTabs({ activeTab, setActiveTab }: ProfileTabsProps) {
   return (
     <div className="hidden lg:block w-full flex justify-end">
-      <div className="bg-white rounded-3xl px-8 py-8 flex gap-4 shadow-lg">
+      <div className="bg-white dark:bg-gray-900/90 dark:border dark:border-pink-500/20 dark:shadow-2xl dark:shadow-pink-500/10 rounded-3xl px-8 py-8 flex gap-4 shadow-lg backdrop-blur-sm">
         {tabs.map((tab, idx) => (
           <button
             key={tab.label}
             onClick={() => setActiveTab(idx)}
-            className={`flex flex-col items-center gap-1 px-6 py-3 rounded-xl transition 
+            className={`flex flex-col items-center gap-1 px-6 py-3 rounded-xl transition-all duration-300 hover:scale-105
               ${
                 activeTab === idx
-                  ? "bg-gradient-to-r from-pink-500 to-pink-400 text-white shadow font-bold"
-                  : "bg-gray-50 text-slate-700 hover:bg-gray-100"
+                  ? "bg-gradient-to-r from-pink-500 to-pink-400 dark:from-pink-600 dark:to-pink-500 text-white shadow-lg dark:shadow-pink-500/30 font-bold"
+                  : "bg-gray-50 dark:bg-gray-800/50 dark:border dark:border-pink-500/10 text-slate-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50 dark:hover:shadow-lg dark:hover:shadow-pink-500/20"
               }
             `}
           >

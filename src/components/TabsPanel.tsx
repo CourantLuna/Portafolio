@@ -4,6 +4,8 @@ import TabPanel from "./TabPanel";
 import Home from "./Home";
 import Resume from "./Resume";
 import Works from "./Works";
+import Blogs from "./Blogs";
+import Contact from "./Contact";
 
 
 export default function TabsPanel() {
@@ -16,6 +18,8 @@ export default function TabsPanel() {
         {activeTab === 0 && <Home />}
         {activeTab === 1 && <Resume />}
         {activeTab === 2 && <Works />}
+        {activeTab === 3 && <Blogs />}
+        {activeTab === 4 && <Contact  />}
 
         {/* ...otros tabs */}
       </TabPanel>

@@ -7,7 +7,7 @@ const works = [
   title: "Plataforma Didacore (DIDA)",
   type: "Web App",
   tags: ["Full Stack", "Frontend", "Backend", "Angular", ".NET Core", "Oracle", "Bootstrap", "Empresa"],
-  img: "https://wfcc6kelz9zexsot.public.blob.vercel-storage.com/Dida%20Logo-Ey7zHmbrEm8DnIda5mQ03EGrOltw9C.png",
+  img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Dida%20Logo-EFtNhHmOa5h1OKQto60erQskPFiOhL.png",
 desc: "Desarrollo full stack para plataforma interna de DIDA, con enfoque en frontend (Angular, TypeScript, Bootstrap) e integración de APIs, .NET Core y Oracle.",
 },
   {
@@ -78,12 +78,12 @@ export default function Works() {
     : works.filter(work => work.tags.includes(selected) || work.type === selected);
 
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-8 dark:text-gray-100">
       {/* Header */}
       <section>
-        <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
           Portafolio
-          <span className="flex-1 border-t border-pink-400 ml-3" />
+          <span className="w-[200px] border-t-3 border-pink-400 dark:border-pink-300" />
         </h2>
       </section>
       {/* Filtros */}
@@ -91,10 +91,10 @@ export default function Works() {
         {categories.map(cat => (
           <button
             key={cat}
-            className={`font-semibold px-4 py-2 rounded-full transition border ${
+            className={`font-semibold px-4 py-2 rounded-full transition-all duration-300 border hover:scale-105 ${
               selected === cat
-                ? "bg-gradient-to-r from-pink-500 to-pink-400 text-white shadow"
-                : "bg-white text-gray-700 hover:bg-pink-50 border-gray-100"
+                ? "bg-gradient-to-r from-pink-500 to-pink-400 dark:from-pink-600 dark:to-pink-500 text-white shadow-lg dark:shadow-pink-500/30"
+                : "bg-white dark:bg-gray-800/50 dark:border-pink-500/20 text-gray-700 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 border-gray-100 dark:hover:shadow-lg dark:hover:shadow-pink-500/20"
             }`}
             onClick={() => setSelected(cat)}
           >
@@ -107,20 +107,19 @@ export default function Works() {
         {filtered.map((work, i) => (
           <div
             key={i}
-            className="rounded-xl bg-pink-50/50 shadow p-4 flex flex-col hover:shadow-lg transition "
+            className="rounded-xl bg-pink-50/50 dark:bg-pink-900/20 dark:border dark:border-pink-500/30 dark:shadow-lg dark:shadow-pink-500/20 shadow p-4 flex flex-col hover:shadow-lg dark:hover:shadow-2xl dark:hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
           >
-            <div className="w-full aspect-video bg-gray-100 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
-              {/* Cambia por <img src={work.img} ... /> si tienes imagen */}
+            <div className="w-full aspect-video bg-gray-100 dark:bg-white dark:border dark:border-pink-500/20 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
               <img
                 src={work.img}
                 alt={work.title}
-                className="object-contain h-full"
+                className="object-contain h-full dark:brightness-90 dark:contrast-110"
                 onError={e => (e.currentTarget.src = "https://placehold.co/400x220?text=Sin+imagen")}
               />
             </div>
-            <div className="text-xs text-gray-500 mb-1">{work.tags.join(" · ")}</div>
-            <div className="font-bold text-lg text-gray-800">{work.title}</div>
-            <div className="text-gray-600 text-sm mb-1">{work.desc}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{work.tags.join(" · ")}</div>
+            <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{work.title}</div>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-1">{work.desc}</div>
           </div>
         ))}
       </div>
