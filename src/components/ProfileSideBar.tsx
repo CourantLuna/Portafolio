@@ -71,25 +71,25 @@ export default function ProfileSidebar() {
       <div className="bg-gray-50 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:shadow-lg dark:shadow-pink-500/10 rounded-xl w-full py-4 px-5 mb-6 shadow flex flex-col gap-3 relative z-10 backdrop-blur-sm">
         <InfoRow
           icon="fa-phone-alt"
-          label="Teléfono"
+          label={t('profile.phone')}
           value="+1 829 512 4461"
           color="text-pink-400 dark:text-pink-300 bg-pink-100 dark:bg-pink-900/30 dark:border dark:border-pink-500/30"
         />
         <InfoRow
           icon="fa-map-marker-alt"
-          label="Ubicación"
+          label={t('profile.location')}
           value="Santo Domingo, RD"
           color="text-sky-400 dark:text-sky-300 bg-sky-100 dark:bg-sky-900/30 dark:border dark:border-sky-500/30"
         />
         <InfoRow
           icon="fa-envelope"
-          label="Correo"
+          label={t('profile.email')}
           value="heydi0811@gmail.com"
           color="text-pink-400 dark:text-pink-300 bg-pink-100 dark:bg-pink-900/30 dark:border dark:border-pink-500/30"
         />
         <InfoRow
           icon="fa-birthday-cake"
-          label="Cumpleaños"
+          label={t('profile.birthday')}
           value="11 de agosto de 2001"
           color="text-violet-400 dark:text-violet-300 bg-violet-100 dark:bg-violet-900/30 dark:border dark:border-violet-500/30"
         />
@@ -102,7 +102,7 @@ export default function ProfileSidebar() {
         rel="noopener noreferrer"
         className="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-400 dark:from-pink-600 dark:to-pink-500 text-white rounded-xl text-center font-semibold shadow-md dark:shadow-pink-500/30 hover:from-pink-600 hover:to-pink-500 dark:hover:from-pink-700 dark:hover:to-pink-600 transition hover:scale-105 relative z-10"
       >
-        Ver Curriculum
+        {t('profile.downloadCV')}
       </a>
     </aside>
   );

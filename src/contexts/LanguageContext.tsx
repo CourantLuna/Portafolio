@@ -92,6 +92,49 @@ const translations = {
     'resume.education.title': 'Educación',
     'resume.experience.title': 'Experiencia',
     'resume.skills.title': 'Habilidades',
+
+    // Resume Education
+    'resume.education.software': 'Ingeniería en Software',
+    'resume.education.software.place': 'Instituto Tecnológico de Santo Domingo (INTEC), República Dominicana',
+    'resume.education.mechatronics': 'Tecnología en Mecatrónica',
+    'resume.education.mechatronics.place': 'Instituto Tecnológico de las Américas (ITLA), Santo Domingo',
+    'resume.education.auditor': 'Auditor ISO 9001:2015',
+    'resume.education.auditor.place': 'AENOR, Santo Domingo',
+    
+    // Resume Experience
+    'resume.experience.fullstack': 'Desarrolladora Full Stack (Angular/.NET)',
+    'resume.experience.fullstack.place': 'Didacore, Santo Domingo',
+    'resume.experience.frontend': 'Desarrolladora Frontend (React/Next.js)',
+    'resume.experience.frontend.place': 'Proyectos personales y freelance',
+    'resume.experience.teacher': 'Docente de Robótica Educativa',
+    'resume.experience.teacher.place': 'LAM School y MINERD',
+    
+    // Resume Skills
+    'resume.skills.web': 'Desarrollo Web',
+    'resume.skills.mobile': 'Apps móviles',
+    'resume.skills.automation': 'Automatización / 3D',
+    'resume.skills.uiux': 'UI/UX y prototipado',
+    'resume.skills.teaching': 'Enseñanza STEAM',
+
+    // Works Projects
+    'works.dida.title': 'Plataforma Didacore (DIDA)',
+    'works.dida.desc': 'Desarrollo full stack para plataforma interna de DIDA, con enfoque en frontend (Angular, TypeScript, Bootstrap) e integración de APIs, .NET Core y Oracle.',
+    'works.asfales.title': 'Asfales',
+    'works.asfales.desc': 'Sistema para gestión de viajes y turismo. Prototipado, diseño de interfaz y frontend.',
+    'works.coritos.title': 'Coritos Viajando',
+    'works.coritos.desc': 'Identidad visual y logo para Coritos Viajando.',
+    'works.genesis.title': 'Marca personal Genesis García',
+    'works.genesis.desc': 'Logo y branding para arquitecta y diseñadora Genesis García.',
+    'works.beiconic.title': 'Be Iconic',
+    'works.beiconic.desc': 'Logo e identidad para tienda de ropa Be Iconic.',
+    'works.pacatrack.title': 'PacaTrak',
+    'works.pacatrack.desc': 'Frontend, prototipado y UI para sistema de gestión de pacas.',
+    'works.cre8arch.title': 'Cre8arch',
+    'works.cre8arch.desc': 'Identidad visual y logo para empresa tecnológica Cre8arch.',
+    'works.zerohunger.title': 'ZeroHunger App',
+    'works.zerohunger.desc': 'Prototipado y frontend para app de gestión de donaciones de alimentos.',
+    'works.heydi.title': 'Marca personal Heydi',
+    'works.heydi.desc': 'Logo y branding de mi propia marca personal.',
   },
   en: {
     // AppBar
@@ -169,6 +212,49 @@ const translations = {
     'resume.education.title': 'Education',
     'resume.experience.title': 'Experience',
     'resume.skills.title': 'Skills',
+
+    // Resume Education
+    'resume.education.software': 'Software Engineering',
+    'resume.education.software.place': 'Instituto Tecnológico de Santo Domingo (INTEC), Dominican Republic',
+    'resume.education.mechatronics': 'Mechatronics Technology',
+    'resume.education.mechatronics.place': 'Instituto Tecnológico de las Américas (ITLA), Santo Domingo',
+    'resume.education.auditor': 'ISO 9001:2015 Auditor',
+    'resume.education.auditor.place': 'AENOR, Santo Domingo',
+    
+    // Resume Experience
+    'resume.experience.fullstack': 'Full Stack Developer (Angular/.NET)',
+    'resume.experience.fullstack.place': 'Didacore, Santo Domingo',
+    'resume.experience.frontend': 'Frontend Developer (React/Next.js)',
+    'resume.experience.frontend.place': 'Personal projects and freelance',
+    'resume.experience.teacher': 'Educational Robotics Teacher',
+    'resume.experience.teacher.place': 'LAM School and MINERD',
+    
+    // Resume Skills
+    'resume.skills.web': 'Web Development',
+    'resume.skills.mobile': 'Mobile Apps',
+    'resume.skills.automation': 'Automation / 3D',
+    'resume.skills.uiux': 'UI/UX and prototyping',
+    'resume.skills.teaching': 'STEAM Teaching',
+
+    // Works Projects
+    'works.dida.title': 'Didacore Platform (DIDA)',
+    'works.dida.desc': 'Full stack development for DIDA internal platform, focused on frontend (Angular, TypeScript, Bootstrap) and API integration, .NET Core and Oracle.',
+    'works.asfales.title': 'Asfales',
+    'works.asfales.desc': 'Travel and tourism management system. Prototyping, interface design and frontend.',
+    'works.coritos.title': 'Coritos Viajando',
+    'works.coritos.desc': 'Visual identity and logo for Coritos Viajando.',
+    'works.genesis.title': 'Genesis García Personal Brand',
+    'works.genesis.desc': 'Logo and branding for architect and designer Genesis García.',
+    'works.beiconic.title': 'Be Iconic',
+    'works.beiconic.desc': 'Logo and identity for Be Iconic clothing store.',
+    'works.pacatrack.title': 'PacaTrak',
+    'works.pacatrack.desc': 'Frontend, prototyping and UI for bale management system.',
+    'works.cre8arch.title': 'Cre8arch',
+    'works.cre8arch.desc': 'Visual identity and logo for technology company Cre8arch.',
+    'works.zerohunger.title': 'ZeroHunger App',
+    'works.zerohunger.desc': 'Prototyping and frontend for food donation management app.',
+    'works.heydi.title': 'Heydi Personal Brand',
+    'works.heydi.desc': 'Logo and branding for my own personal brand.',
   }
 };
 

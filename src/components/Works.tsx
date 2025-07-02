@@ -1,77 +1,123 @@
 // src/components/Works.tsx
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../hooks/useLanguage";
 
-// Puedes cambiar las imágenes por reales, o usar placeholders temporales
-const works = [
-  {
-  title: "Plataforma Didacore (DIDA)",
-  type: "Web App",
-  tags: ["Full Stack", "Frontend", "Backend", "Angular", ".NET Core", "Oracle", "Bootstrap", "Empresa"],
-  img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Dida%20Logo-EFtNhHmOa5h1OKQto60erQskPFiOhL.png",
-desc: "Desarrollo full stack para plataforma interna de DIDA, con enfoque en frontend (Angular, TypeScript, Bootstrap) e integración de APIs, .NET Core y Oracle.",
-},
-  {
-    title: "Asfales",
-    type: "Web App",
-    tags: ["Frontend", "Prototipado", "UX/UI"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-asfales-HxyNAE8SvnfyLlrF42WaBW4ShGEXIJ.png",
-    desc: "Sistema para gestión de viajes y turismo. Prototipado, diseño de interfaz y frontend.",
-  },
-  {
-    title: "Coritos Viajando",
-    type: "Branding",
-    tags: ["Logo", "Branding"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-coritosviajando-46OFM05bqT2HmaZmCan2Ng3AgzMda3.png",
-    desc: "Identidad visual y logo para Coritos Viajando.",
-  },
-  {
-    title: "Marca personal Genesis García",
-    type: "Branding",
-    tags: ["Logo", "Branding"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-genesismarcapersonal-yRS3PJWhx1KUzEtPbuYpyYhx0dVt8a.png",
-    desc: "Logo y branding para arquitecta y diseñadora Genesis García.",
-  },
-  {
-    title: "Be Iconic",
-    type: "Branding",
-    tags: ["Logo", "Tienda", "Branding"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-beiconic-hWmDJ1odIfqqhK1boDiFOzNiO41fWh.png",
-    desc: "Logo e identidad para tienda de ropa Be Iconic.",
-  },
-  {
-    title: "PacaTrak",
-    type: "Web App",
-    tags: ["Frontend", "Prototipado"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-pacatrack-fVDTbexuUk7aiyoFt1QpbhxkcuL2u6.png",
-    desc: "Frontend, prototipado y UI para sistema de gestión de pacas.",
-  },
-  {
-    title: "Cre8arch",
-    type: "Branding",
-    tags: ["Logo", "Identidad", "Tecnología"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-cre8arch-SonWngfqXFxLydusQilIFN923lBPGf.png",
-    desc: "Identidad visual y logo para empresa tecnológica Cre8arch.",
-  },
-  {
-    title: "ZeroHunger App",
-    type: "Web App",
-    tags: ["Frontend", "Prototipado"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-zerohunger-uDBUo2Txebixek1gCfAW0wy6cs7zMc.png",
-    desc: "Prototipado y frontend para app de gestión de donaciones de alimentos.",
-  },
-  {
-    title: "Marca personal Heydi",
-    type: "Branding",
-    tags: ["Logo", "Branding"],
-    img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-heydimarca-mdqK7Fncef0ZJnTkczCZ876OhmfdcW.png",
-    desc: "Logo y branding de mi propia marca personal.",
-  },
-];
-
 export default function Works() {
-  const { t } = useLanguage();
-  const [selected, setSelected] = useState("Todos");
+  const { t, language } = useLanguage();
+  const [selected, setSelected] = useState(t('works.filter.all'));
+
+  // Función para traducir tags individuales
+  const translateTag = (tag: string): string => {
+    const tagTranslations: { [key: string]: { es: string; en: string } } = {
+      'Prototipado': { es: 'Prototipado', en: 'Prototyping' },
+      'Prototyping': { es: 'Prototipado', en: 'Prototyping' },
+      'Identidad': { es: 'Identidad', en: 'Identity' },
+      'Identity': { es: 'Identidad', en: 'Identity' },
+      'Frontend': { es: 'Frontend', en: 'Frontend' },
+      'Backend': { es: 'Backend', en: 'Backend' },
+      'Full Stack': { es: 'Full Stack', en: 'Full Stack' },
+      'Logo': { es: 'Logo', en: 'Logo' },
+      'Branding': { es: 'Branding', en: 'Branding' },
+      'UX/UI': { es: 'UX/UI', en: 'UX/UI' },
+      'Angular': { es: 'Angular', en: 'Angular' },
+      '.NET Core': { es: '.NET Core', en: '.NET Core' },
+      'Oracle': { es: 'Oracle', en: 'Oracle' },
+      'Bootstrap': { es: 'Bootstrap', en: 'Bootstrap' },
+      'Empresa': { es: 'Empresa', en: 'Enterprise' },
+      'Tienda': { es: 'Tienda', en: 'Store' },
+      'Tecnología': { es: 'Tecnología', en: 'Technology' }
+    };
+
+    const translation = tagTranslations[tag];
+    if (translation) {
+      return language === 'es' ? translation.es : translation.en;
+    }
+    return tag; // Si no hay traducción, devolver el tag original
+  };
+
+  // Actualizar solo los filtros traducibles cuando cambie el idioma
+  useEffect(() => {
+    // Comprobar si el filtro actual es uno de los traducibles y actualizarlo
+    const allValues = ['All', 'Todos'];
+    const prototypingValues = ['Prototyping', 'Prototipado'];
+    const identityValues = ['Identity', 'Identidad'];
+    
+    if (allValues.includes(selected) || selected === t('works.filter.all')) {
+      setSelected(t('works.filter.all'));
+    } else if (prototypingValues.includes(selected) || selected === t('works.filter.prototyping')) {
+      setSelected(t('works.filter.prototyping'));
+    } else if (identityValues.includes(selected) || selected === t('works.filter.identity')) {
+      setSelected(t('works.filter.identity'));
+    }
+    // Si no es traducible (como "Branding", "Web App", etc.), mantener el valor actual
+  }, [language, t, selected]);
+
+  // Puedes cambiar las imágenes por reales, o usar placeholders temporales
+  const works = [
+    {
+      titleKey: "works.dida.title",
+      descKey: "works.dida.desc",
+      type: "Web App",
+      tags: ["Full Stack", "Frontend", "Backend", "Angular", ".NET Core", "Oracle", "Bootstrap", "Empresa"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Dida%20Logo-EFtNhHmOa5h1OKQto60erQskPFiOhL.png",
+    },
+    {
+      titleKey: "works.asfales.title",
+      descKey: "works.asfales.desc",
+      type: "Web App",
+      tags: ["Frontend", "Prototipado", "UX/UI"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-asfales-HxyNAE8SvnfyLlrF42WaBW4ShGEXIJ.png",
+    },
+    {
+      titleKey: "works.coritos.title",
+      descKey: "works.coritos.desc",
+      type: "Branding",
+      tags: ["Logo", "Branding"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-coritosviajando-46OFM05bqT2HmaZmCan2Ng3AgzMda3.png",
+    },
+    {
+      titleKey: "works.genesis.title",
+      descKey: "works.genesis.desc",
+      type: "Branding",
+      tags: ["Logo", "Branding"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-genesismarcapersonal-yRS3PJWhx1KUzEtPbuYpyYhx0dVt8a.png",
+    },
+    {
+      titleKey: "works.beiconic.title",
+      descKey: "works.beiconic.desc",
+      type: "Branding",
+      tags: ["Logo", "Tienda", "Branding"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-beiconic-hWmDJ1odIfqqhK1boDiFOzNiO41fWh.png",
+    },
+    {
+      titleKey: "works.pacatrack.title",
+      descKey: "works.pacatrack.desc",
+      type: "Web App",
+      tags: ["Frontend", "Prototipado"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-pacatrack-fVDTbexuUk7aiyoFt1QpbhxkcuL2u6.png",
+    },
+    {
+      titleKey: "works.cre8arch.title",
+      descKey: "works.cre8arch.desc",
+      type: "Branding",
+      tags: ["Logo", "Identidad", "Tecnología"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-cre8arch-SonWngfqXFxLydusQilIFN923lBPGf.png",
+    },
+    {
+      titleKey: "works.zerohunger.title",
+      descKey: "works.zerohunger.desc",
+      type: "Web App",
+      tags: ["Frontend", "Prototipado"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-zerohunger-uDBUo2Txebixek1gCfAW0wy6cs7zMc.png",
+    },
+    {
+      titleKey: "works.heydi.title",
+      descKey: "works.heydi.desc",
+      type: "Branding",
+      tags: ["Logo", "Branding"],
+      img: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-heydimarca-mdqK7Fncef0ZJnTkczCZ876OhmfdcW.png",
+    },
+  ];
 
   const categories = [
     t('works.filter.all'),
@@ -85,7 +131,17 @@ export default function Works() {
 
   const filtered = selected === t('works.filter.all')
     ? works
-    : works.filter(work => work.tags.includes(selected) || work.type === selected);
+    : works.filter(work => {
+        // Para filtros traducibles, verificar ambas versiones (español e inglés)
+        if (selected === t('works.filter.prototyping')) {
+          return work.tags.includes('Prototipado') || work.tags.includes('Prototyping');
+        }
+        if (selected === t('works.filter.identity')) {
+          return work.tags.includes('Identidad') || work.tags.includes('Identity');
+        }
+        // Para filtros no traducibles, usar la lógica normal
+        return work.tags.includes(selected) || work.type === selected;
+      });
 
   return (
     <div className="w-full flex flex-col gap-8 dark:text-gray-100">
@@ -122,17 +178,20 @@ export default function Works() {
             <div className="w-full aspect-video bg-gray-100 dark:bg-white dark:border dark:border-pink-500/20 rounded-lg mb-3 flex items-center justify-center overflow-hidden">
               <img
                 src={work.img}
-                alt={work.title}
+                alt={t(work.titleKey)}
                 className="object-contain h-full dark:brightness-90 dark:contrast-110"
                 onError={e => (e.currentTarget.src = "https://placehold.co/400x220?text=Sin+imagen")}
               />
             </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">{work.tags.join(" · ")}</div>
-            <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{work.title}</div>
-            <div className="text-gray-600 dark:text-gray-300 text-sm mb-1">{work.desc}</div>
+            <div className="text-xs text-gray-500 dark:text-gray-400 mb-1">
+              {work.tags.map(tag => translateTag(tag)).join(" · ")}
+            </div>
+            <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{t(work.titleKey)}</div>
+            <div className="text-gray-600 dark:text-gray-300 text-sm mb-1">{t(work.descKey)}</div>
           </div>
         ))}
       </div>
     </div>
   );
+
 }
