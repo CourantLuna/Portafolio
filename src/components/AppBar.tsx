@@ -59,17 +59,15 @@ export default function AppBar() {
     <header className="bg-white/80 dark:bg-gray-900/80 fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-gray-200/20 dark:border-pink-500/20">
       <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ">
           <svg 
-          scale={2}
+            scale={1}
             xmlns="http://www.w3.org/2000/svg" 
             xmlnsXlink="http://www.w3.org/1999/xlink" 
-            width="200" 
-            height="55" 
             viewBox="0 0 150 41.25" 
             preserveAspectRatio="xMidYMid meet" 
             version="1.2"
-            className="fill-gray-900 dark:fill-gray-100 hover:fill-pink-500 dark:hover:fill-pink-400 transition-all duration-300 hover:scale-105"
+            className="h-[27.5px] md:h-[50px] md:w-[180px] lg:w-[210px] fill-gray-900 dark:fill-gray-100 hover:fill-pink-500 dark:hover:fill-pink-400 transition-all duration-300 hover:scale-105"
           >
             <g>
               <path d="M 106.316406 4.511719 C 106.242188 4.625 104.53125 9.683594 102.503906 15.761719 L 98.808594 26.828125 L 102.746094 26.71875 L 106.445312 15.652344 C 108.46875 9.570312 110.125 4.53125 110.125 4.457031 C 110.125 4.214844 106.445312 4.289062 106.316406 4.511719 Z M 106.316406 4.511719 "/>
