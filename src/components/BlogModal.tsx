@@ -5,24 +5,17 @@ import { createPortal } from "react-dom";
 import { FaTimes } from "react-icons/fa";
 import { useLanguage } from "../hooks/useLanguage";
 
-interface Blog {
-  date: string;
-  tag: string;
-  img: string;
-  title: string;
-  content: React.ReactNode;
-}
-
 interface BlogModalProps {
   open: boolean;
   onClose: () => void;
-  blog: Blog | null;
+  blogId: string | null;
+  getBlogContent: (blogId: string) => React.ReactNode;
 }
 
-export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
+export default function BlogModal({ open, onClose, blogId, getBlogContent }: BlogModalProps) {
   const { t } = useLanguage();
   
-  if (!open || !blog) return null;
+  if (!open || !blogId) return null;
 
   // Función para cerrar modal al hacer clic en el backdrop
   const handleBackdropClick = (e: React.MouseEvent) => {
@@ -52,11 +45,11 @@ export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
           
           {/* Fecha y categoría en el header */}
           <div className="text-sm text-pink-500 dark:text-pink-400 font-semibold mb-2 pr-12">
-            {blog.date} • {blog.tag}
+            {t(`blogs.${blogId}.date`)} • {t(`blogs.${blogId}.tag`)}
           </div>
           {/* Título en el header */}
           <h1 className="font-bold text-2xl lg:text-3xl dark:text-gray-100 mb-2 pr-12 leading-tight">
-            {blog.title}
+            {t(`blogs.${blogId}.title`)}
           </h1>
         </div>
         
@@ -64,8 +57,8 @@ export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
           {/* Imagen principal */}
           <div className="w-full aspect-video rounded-xl bg-gray-100 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 mb-6 flex items-center justify-center overflow-hidden shadow-lg">
             <img
-              src={blog.img}
-              alt={blog.title}
+              src={`/assets/blog-${blogId === 'robotics' ? 'robotica' : blogId === 'productivity' ? 'tipsdev' : blogId}.png`}
+              alt={t(`blogs.${blogId}.title`)}
               className="object-cover w-full h-full dark:brightness-90 dark:contrast-110"
               onError={e => (e.currentTarget.src = "https://placehold.co/800x450/ec4899/ffffff?text=Blog+Image")}
             />
@@ -74,7 +67,7 @@ export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
           {/* Contenido del blog */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <div className="text-gray-700 dark:text-gray-300 leading-relaxed space-y-4 text-base lg:text-lg">
-              {blog.content}
+              {getBlogContent(blogId)}
             </div>
           </div>
           

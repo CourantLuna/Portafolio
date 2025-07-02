@@ -5,6 +5,11 @@ import { useLanguage } from "../hooks/useLanguage";
 export default function Resume() {
   const { t } = useLanguage();
   
+  // Función para traducir fechas que contienen "Actualidad"
+  const translateDate = (date: string): string => {
+    return date.replace(/Actualidad/g, t('resume.date.present'));
+  };
+  
   const education = [
     {
       date: "2022 - Actualidad",
@@ -77,7 +82,7 @@ export default function Resume() {
             className="group relative inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-pink-400 to-pink-500 dark:from-pink-500 dark:to-pink-600 text-white text-xs font-semibold rounded-full shadow-lg hover:shadow-pink-200 dark:hover:shadow-pink-500/30 hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
           >
             <FaCertificate className="text-[10px]" />
-            Certificados Verificados
+            {t('resume.certificates.verified')}
             <FaExternalLinkAlt className="text-[8px] opacity-70" />
             <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 dark:bg-yellow-300 rounded-full animate-ping"></div>
           </a>
@@ -85,7 +90,7 @@ export default function Resume() {
         <div className="flex flex-col gap-4">
           {education.map((ed, i) => (
             <div key={i} className={`rounded-xl p-4 ${ed.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
-              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ed.date}</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{translateDate(ed.date)}</div>
               <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{t(ed.titleKey)}</div>
               <div className="text-gray-700 dark:text-gray-300">{t(ed.placeKey)}</div>
             </div>
@@ -102,7 +107,7 @@ export default function Resume() {
         <div className="flex flex-col gap-4">
           {experience.map((ex, i) => (
             <div key={i} className={`rounded-xl p-4 ${ex.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
-              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ex.date}</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{translateDate(ex.date)}</div>
               <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{t(ex.titleKey)}</div>
               <div className="text-gray-700 dark:text-gray-300">{t(ex.placeKey)}</div>
             </div>
@@ -119,7 +124,7 @@ export default function Resume() {
         <div className="grid md:grid-cols-2 gap-8 mb-10">
           {/* Skills */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Habilidades</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">{t('resume.skills.skillsLabel')}</h3>
             <div className="flex flex-col gap-4">
               {skills.map((sk, i) => (
                 <div key={i}>
@@ -139,7 +144,7 @@ export default function Resume() {
           </div>
           {/* Conocimientos */}
           <div>
-            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Conocimientos</h3>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">{t('resume.skills.knowledgeLabel')}</h3>
             <div className="flex flex-wrap gap-3">
               {knowledges.map((k, i) => (
                 <span

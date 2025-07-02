@@ -115,6 +115,10 @@ const translations = {
     'resume.skills.automation': 'Automatización / 3D',
     'resume.skills.uiux': 'UI/UX y prototipado',
     'resume.skills.teaching': 'Enseñanza STEAM',
+    'resume.skills.skillsLabel': 'Habilidades',
+    'resume.skills.knowledgeLabel': 'Conocimientos',
+    'resume.certificates.verified': 'Certificados Verificados',
+    'resume.date.present': 'Actualidad',
 
     // Works Projects
     'works.dida.title': 'Plataforma Didacore (DIDA)',
@@ -135,6 +139,48 @@ const translations = {
     'works.zerohunger.desc': 'Prototipado y frontend para app de gestión de donaciones de alimentos.',
     'works.heydi.title': 'Marca personal Heydi',
     'works.heydi.desc': 'Logo y branding de mi propia marca personal.',
+
+    // Blogs
+    'blogs.frontend.date': '15 Julio',
+    'blogs.frontend.tag': 'Tecnología',
+    'blogs.frontend.title': '¿Por qué elegí el Frontend como mi puerta al mundo tech?',
+    'blogs.frontend.content.p1': 'Desde la universidad descubrí que crear interfaces era el espacio perfecto para unir creatividad y lógica. El frontend me permitió trabajar en proyectos reales, desde aplicaciones empresariales hasta plataformas sociales, y encontrar mi voz como mujer en tecnología en República Dominicana.',
+    'blogs.frontend.content.p2': 'Hoy disfruto inspirar a otras jóvenes a explorar el mundo del desarrollo web y mostrar que sí se puede tener impacto desde el Caribe.',
+    
+    'blogs.robotics.date': '4 Mayo',
+    'blogs.robotics.tag': 'Educación STEAM',
+    'blogs.robotics.title': '5 Claves para inspirar a niñas dominicanas en Robótica y Programación',
+    'blogs.robotics.content.p1': 'Compartir mi experiencia como facilitadora de robótica en LAM School y talleres en MINERD me hizo ver lo importante que es el ejemplo. La robótica es divertida, pero sobre todo, es una vía para que más chicas desarrollen confianza en sus habilidades.',
+    'blogs.robotics.content.li1': 'Demuestra resultados prácticos con proyectos reales',
+    'blogs.robotics.content.li2': 'Cuenta historias de mujeres en tech locales',
+    'blogs.robotics.content.li3': 'Haz del error parte del aprendizaje',
+    'blogs.robotics.content.li4': 'Usa plataformas como Arduino, LEGO, Scratch y Python',
+    'blogs.robotics.content.li5': 'Mantén siempre una mentalidad de curiosidad',
+
+    'blogs.asfales.date': '12 Marzo',
+    'blogs.asfales.tag': 'Proyectos',
+    'blogs.asfales.title': 'Detrás de Asfales: cómo creé una app turística de cero a producto',
+    'blogs.asfales.content.p1': 'Asfales nació como proyecto final, pero terminó siendo una app real de turismo y gestión de viajes. Aprendí a combinar Next.js, prototipado en Figma y trabajo en equipo para entregar una solución útil y profesional, conectando necesidades reales del sector turismo en RD.',
+
+    'blogs.branding.date': '22 Abril',
+    'blogs.branding.tag': 'Branding',
+    'blogs.branding.title': 'Mi experiencia diseñando identidades para startups en RD',
+    'blogs.branding.content.p1': 'Diseñar marcas para empresas como Coritos Viajando, Be Iconic o Genesis García me permitió entender la importancia de una identidad coherente y memorable. Uso Figma, Canva y mucha observación de tendencias para crear logos y sistemas visuales que conectan con el público dominicano.',
+
+    'blogs.productivity.date': '3 Febrero',
+    'blogs.productivity.tag': 'Productividad',
+    'blogs.productivity.title': '6 trucos para ser developer, estudiante y voluntaria… ¡sin perder la cabeza!',
+    'blogs.productivity.content.li1': 'Planifica tu semana, pero deja espacio para imprevistos',
+    'blogs.productivity.content.li2': 'Usa apps como Notion, Google Calendar y Pomodoro',
+    'blogs.productivity.content.li3': 'Apóyate en comunidades (Discord, WhatsApp, WomenTechmakers)',
+    'blogs.productivity.content.li4': 'Dale prioridad al sueño y al autocuidado',
+    'blogs.productivity.content.li5': 'Elige tus batallas: aprende a decir que no',
+    'blogs.productivity.content.li6': 'Recuerda por qué empezaste: tu propósito es tu motor',
+
+    'blogs.zerohunger.date': '8 Enero',
+    'blogs.zerohunger.tag': 'Impacto Social',
+    'blogs.zerohunger.title': 'ZeroHunger: tecnología dominicana para combatir el desperdicio de alimentos',
+    'blogs.zerohunger.content.p1': 'ZeroHunger fue un reto increíble: crear una app para gestionar donaciones de alimentos y conectar a quienes quieren ayudar. Aprendí de bases de datos, APIs, diseño de experiencia de usuario y sobre todo del impacto social que puede tener la tecnología en nuestra isla.',
   },
   en: {
     // AppBar
@@ -235,6 +281,10 @@ const translations = {
     'resume.skills.automation': 'Automation / 3D',
     'resume.skills.uiux': 'UI/UX and prototyping',
     'resume.skills.teaching': 'STEAM Teaching',
+    'resume.skills.skillsLabel': 'Skills',
+    'resume.skills.knowledgeLabel': 'Knowledge',
+    'resume.certificates.verified': 'Verified Certificates',
+    'resume.date.present': 'Present',
 
     // Works Projects
     'works.dida.title': 'Didacore Platform (DIDA)',
@@ -255,6 +305,48 @@ const translations = {
     'works.zerohunger.desc': 'Prototyping and frontend for food donation management app.',
     'works.heydi.title': 'Heydi Personal Brand',
     'works.heydi.desc': 'Logo and branding for my own personal brand.',
+
+    // Blogs
+    'blogs.frontend.date': 'July 15',
+    'blogs.frontend.tag': 'Technology',
+    'blogs.frontend.title': 'Why I chose Frontend as my gateway to the tech world?',
+    'blogs.frontend.content.p1': 'Since university I discovered that creating interfaces was the perfect space to unite creativity and logic. Frontend allowed me to work on real projects, from enterprise applications to social platforms, and find my voice as a woman in technology in the Dominican Republic.',
+    'blogs.frontend.content.p2': 'Today I enjoy inspiring other young women to explore the world of web development and showing that you can make an impact from the Caribbean.',
+    
+    'blogs.robotics.date': 'May 4',
+    'blogs.robotics.tag': 'STEAM Education',
+    'blogs.robotics.title': '5 Keys to inspire Dominican girls in Robotics and Programming',
+    'blogs.robotics.content.p1': 'Sharing my experience as a robotics facilitator at LAM School and workshops at MINERD made me see how important example is. Robotics is fun, but above all, it is a way for more girls to develop confidence in their abilities.',
+    'blogs.robotics.content.li1': 'Demonstrate practical results with real projects',
+    'blogs.robotics.content.li2': 'Tell stories of local women in tech',
+    'blogs.robotics.content.li3': 'Make error part of learning',
+    'blogs.robotics.content.li4': 'Use platforms like Arduino, LEGO, Scratch and Python',
+    'blogs.robotics.content.li5': 'Always maintain a curiosity mindset',
+
+    'blogs.asfales.date': 'March 12',
+    'blogs.asfales.tag': 'Projects',
+    'blogs.asfales.title': 'Behind Asfales: how I created a tourism app from zero to product',
+    'blogs.asfales.content.p1': 'Asfales was born as a final project, but ended up being a real tourism and travel management app. I learned to combine Next.js, Figma prototyping and teamwork to deliver a useful and professional solution, connecting real needs of the tourism sector in DR.',
+
+    'blogs.branding.date': 'April 22',
+    'blogs.branding.tag': 'Branding',
+    'blogs.branding.title': 'My experience designing identities for startups in DR',
+    'blogs.branding.content.p1': 'Designing brands for companies like Coritos Viajando, Be Iconic or Genesis García allowed me to understand the importance of a coherent and memorable identity. I use Figma, Canva and a lot of trend observation to create logos and visual systems that connect with the Dominican public.',
+
+    'blogs.productivity.date': 'February 3',
+    'blogs.productivity.tag': 'Productivity',
+    'blogs.productivity.title': '6 tricks to be a developer, student and volunteer... without losing your mind!',
+    'blogs.productivity.content.li1': 'Plan your week, but leave room for unforeseen events',
+    'blogs.productivity.content.li2': 'Use apps like Notion, Google Calendar and Pomodoro',
+    'blogs.productivity.content.li3': 'Rely on communities (Discord, WhatsApp, WomenTechmakers)',
+    'blogs.productivity.content.li4': 'Prioritize sleep and self-care',
+    'blogs.productivity.content.li5': 'Choose your battles: learn to say no',
+    'blogs.productivity.content.li6': 'Remember why you started: your purpose is your engine',
+
+    'blogs.zerohunger.date': 'January 8',
+    'blogs.zerohunger.tag': 'Social Impact',
+    'blogs.zerohunger.title': 'ZeroHunger: Dominican technology to combat food waste',
+    'blogs.zerohunger.content.p1': 'ZeroHunger was an incredible challenge: creating an app to manage food donations and connect those who want to help. I learned about databases, APIs, user experience design and above all about the social impact that technology can have on our island.',
   }
 };
 
