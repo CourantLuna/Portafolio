@@ -12,7 +12,7 @@ export default function TabsPanel() {
   const [activeTab, setActiveTab] = useState(0);
 
   return (
-    <div className="w-full  flex flex-col items-center pb-16 ">
+    <div className="w-full max-w-4xl flex flex-col items-center pb-16 ">
       <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab} />
       <TabPanel>
         {activeTab === 0 && <Home />}
