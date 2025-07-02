@@ -8,7 +8,7 @@ interface ProfileTabsProps {
 // Puedes cambiar los iconos SVG o usar react-icons/fontawesome si prefieres.
 const tabs = [
   {
-    label: "Home",
+    label: "Inicio",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M9 21V9h6v12" />
@@ -16,7 +16,7 @@ const tabs = [
     ),
   },
   {
-    label: "Resume",
+    label: "Curriculum",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" />
@@ -26,7 +26,7 @@ const tabs = [
     ),
   },
   {
-    label: "Works",
+    label: "Trabajos",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path d="M4 7V4a1 1 0 011-1h3m7 0h3a1 1 0 011 1v3M4 7h16m-8 0v13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
@@ -43,7 +43,7 @@ const tabs = [
     ),
   },
   {
-    label: "Contact",
+    label: "Contacto",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" />

@@ -83,11 +83,12 @@ export default function ProfileSidebar() {
       </div>
       {/* Botón CV */}
       <a
-          href="/public/cvHG24-ES.pdf"
-        download
+          href="https://drive.google.com/file/d/1Aogy4yU81Y-atkdHRft4iBYmmUkwYwRn/view?usp=sharing"
+        target="_blank" rel="noopener noreferrer"
+
         className="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-400 text-white rounded-xl text-center font-semibold shadow-md hover:from-pink-600 hover:to-pink-500 transition"
       >
-        Descargar CV
+        Ver Curriculum
       </a>
     </aside>
   );

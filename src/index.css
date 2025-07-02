@@ -1,5 +1,6 @@
 
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 
 
@@ -25,6 +26,14 @@
   @keyframes slideDown {
     0% { transform: translateY(-40px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  .animate-slide-infinite {
+    animation: slideInfinite 20s linear infinite;
+  }
+  @keyframes slideInfinite {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 }
 

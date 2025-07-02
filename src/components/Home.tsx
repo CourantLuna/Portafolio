@@ -12,11 +12,24 @@ import {
 
 // Puedes usar logos locales en /assets o urls de logos de clientes/empresas reales
 const clients = [
-  { src: "/assets/logo-minerd.png", alt: "MINERD" },
-  { src: "/assets/logo-dida.png", alt: "DIDA" },
-  { src: "/assets/logo-lamschool.png", alt: "LAM School" },
-  { src: "/assets/logo-hanes.png", alt: "Hanesbrands" },
-  { src: "/assets/logo-itla.png", alt: "ITLA" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-minerd-4b4uXag4qedx5ioOVlk3xhjK8Gz2P5.png", alt: "MINERD" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-dida-3K8Qt6Wt5iKBXILQAPgGXC36evORa0.png", alt: "DIDA" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-lamschool-qo8l6nS5cFK3B06XxqQ0YVhmbeiU7T.png", alt: "LAM School" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-hanesinc-7wCVZVMiCIJwvHurDI2yv2JvsgHlV4.png", alt: "Hanesbrands" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-asfales-HxyNAE8SvnfyLlrF42WaBW4ShGEXIJ.png", 
+    alt: "ASFALES" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-beiconic-hWmDJ1odIfqqhK1boDiFOzNiO41fWh.png", 
+    alt: "BeIconic" },
+ { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-coritosviajando-46OFM05bqT2HmaZmCan2Ng3AgzMda3.png", 
+    alt: "CoritosViajando" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-cre8arch-SonWngfqXFxLydusQilIFN923lBPGf.png", 
+    alt: "Cre8Arch" },
+    {src:"https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-genesismarcapersonal-yRS3PJWhx1KUzEtPbuYpyYhx0dVt8a.png", 
+      alt:"genesis marca personal"},
+  {src:"https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-pacatrack-fVDTbexuUk7aiyoFt1QpbhxkcuL2u6.png", alt:"PacaTrack"},
+  { src:"https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-plastidel-WyEQlW1B8XcLtcpNF6e1iqiIVadJmD.png", alt:"Plastidel" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-robotdo-MywisZeaRNbKeXtYQCgcTjLl0GT7pW.png",alt: "RobotDo" },
+  {src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-trebollrd-9Z61eoJml8j3i35D2xyh97DW42gEJV.png", alt: "Treboll RD" },
 ];
 
 const skills = [
@@ -64,7 +77,7 @@ export default function Home() {
       {/* ABOUT ME */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 mb-2 flex items-center gap-4">
-          About Me
+          Sobre mí
           <span className="w-[200px] border-t-3 border-pink-400" />
         </h2>
         <p className="text-gray-800 mb-2">
@@ -79,7 +92,7 @@ export default function Home() {
       </section>
       {/* WHAT I DO */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-5">What I do!</h2>
+        <h2 className="text-2xl font-mono font-bold text-gray-900 mb-5">¡LO QUE HAGO!</h2>
         <div className="grid sm:grid-cols-2 gap-6">
           {skills.map((skill) => (
             <div
@@ -97,17 +110,30 @@ export default function Home() {
       </section>
       {/* CLIENTS */}
       <section>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">My Client!</h2>
-        <div className="flex flex-wrap gap-6 justify-center items-center bg-gray-50 p-6 rounded-xl">
-          {clients.map((c) => (
-            <img
-              key={c.alt}
-              src={c.src}
-              alt={c.alt}
-              className="h-10 object-contain"
-              style={{ maxWidth: 120 }}
-            />
-          ))}
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Mis clientes</h2>
+        <div className="bg-gray-50 p-6 rounded-xl overflow-hidden">
+          <div className="flex animate-slide-infinite">
+            {/* Primera copia de las imágenes */}
+            {clients.map((c) => (
+              <img
+                key={c.alt}
+                src={c.src}
+                alt={c.alt}
+                className="h-16 object-contain mx-8 flex-shrink-0"
+                style={{ maxWidth: 120 }}
+              />
+            ))}
+            {/* Segunda copia para el efecto infinito */}
+            {clients.map((c) => (
+              <img
+                key={`${c.alt}-duplicate`}
+                src={c.src}
+                alt={c.alt}
+                className="h-16 object-contain mx-8 flex-shrink-0"
+                style={{ maxWidth: 120 }}
+              />
+            ))}
+          </div>
         </div>
       </section>
       {/* FOOTER */}
