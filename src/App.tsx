@@ -4,8 +4,7 @@ import TabsPanel from "./components/TabsPanel";
 
 export default function App() {
   return (
-    <div className="relative min-h-screen w-full bg-gradient-to-br from-pink-100 via-violet-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      {/* Efecto de luz de fondo en modo dark */}
+<div className="relative min-h-screen w-full bg-gradient-to-br from-pink-100 via-violet-50 to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 ">       {/* Efecto de luz de fondo en modo dark */}
       <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-pink-900/10 dark:via-purple-900/5 dark:to-violet-900/10 pointer-events-none"></div>
       
       <AppBar />

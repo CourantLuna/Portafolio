@@ -2,17 +2,29 @@ import { useEffect, useState } from "react";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 
 const menuLinks = [
-  { label: "Inicio", icon: <i className="fa-solid fa-house" />, href: "#" },
-  { label: "Curriculum", icon: <i className="fa-solid fa-file-alt" />, href: "#" },
-  { label: "Trabajos", icon: <i className="fa-solid fa-cube" />, href: "#" },
-  { label: "Blogs", icon: <i className="fa-brands fa-blogger" />, href: "#" },
-  { label: "Contacto", icon: <i className="fa-regular fa-address-book" />, href: "#" },
+  { label: "Inicio", icon: <i className="fa-solid fa-house" />, tabIndex: 0 },
+  { label: "Curriculum", icon: <i className="fa-solid fa-file-alt" />, tabIndex: 1 },
+  { label: "Trabajos", icon: <i className="fa-solid fa-cube" />, tabIndex: 2 },
+  { label: "Blogs", icon: <i className="fa-brands fa-blogger" />, tabIndex: 3 },
+  { label: "Contacto", icon: <i className="fa-regular fa-address-book" />, tabIndex: 4 },
 ];
 
 export default function AppBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   // Estado para el theme
   const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  // Manejar navegación mobile
+  const handleMobileNavigation = (tabIndex: number, tabLabel: string) => {
+    // Disparar evento personalizado para comunicarse con TabsPanel
+    const event = new CustomEvent('openMobileSheet', {
+      detail: { tabIndex, tabLabel }
+    });
+    window.dispatchEvent(event);
+    
+    // Cerrar el menú
+    setMenuOpen(false);
+  };
 
   // Cambia el tema
   const toggleTheme = () => {
@@ -93,13 +105,13 @@ export default function AppBar() {
             <ul className="mt-16 w-full flex flex-col p-0 rounded-b-3xl bg-white dark:bg-gray-800/50 dark:backdrop-blur-sm">
               {menuLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="flex items-center gap-3 px-4 py-3 transition text-gray-400 dark:text-gray-300 hover:bg-gradient-to-r hover:from-pink-400 hover:to-pink-500 dark:hover:from-pink-500 dark:hover:to-pink-600 hover:text-white font-semibold"
+                  <button
+                    onClick={() => handleMobileNavigation(link.tabIndex, link.label)}
+                    className="w-full flex items-center gap-3 px-4 py-3 transition text-gray-400 dark:text-gray-300 hover:bg-gradient-to-r hover:from-pink-400 hover:to-pink-500 dark:hover:from-pink-500 dark:hover:to-pink-600 hover:text-white font-semibold text-left"
                   >
                     {link.icon}
                     <span>{link.label}</span>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

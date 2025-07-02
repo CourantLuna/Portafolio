@@ -110,29 +110,41 @@ export default function Home() {
         </div>
       </section>
       {/* CLIENTS */}
-      <section>
+     <section>
         <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">Mis clientes</h2>
         <div className="bg-gray-50 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:shadow-lg dark:shadow-pink-500/10 p-6 rounded-xl overflow-hidden backdrop-blur-sm">
           <div className="flex animate-slide-infinite">
             {/* Primera copia de las imágenes */}
             {clients.map((c) => (
-              <img
-                key={c.alt}
-                src={c.src}
-                alt={c.alt}
-                className="h-16 object-contain mx-8 flex-shrink-0 dark:brightness-90 dark:contrast-110"
-                style={{ maxWidth: 120 }}
-              />
+              <div key={c.alt} className="relative mx-8 flex-shrink-0 flex items-center justify-center">
+                {/* Efecto de luz circular rosada */}
+                <div className="absolute inset-0 w-32 h-20 flex items-center justify-start">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-400/20 dark:from-pink-400/30 dark:to-pink-300/30 blur-xl animate-pulse"></div>
+                </div>
+                {/* Logo */}
+                <img
+                  src={c.src}
+                  alt={c.alt}
+                  className="relative z-10 h-20 object-contain dark:brightness-90 dark:contrast-110 transition-all duration-300 hover:scale-110"
+                  style={{ maxWidth: 120 }}
+                />
+              </div>
             ))}
             {/* Segunda copia para el efecto infinito */}
             {clients.map((c) => (
-              <img
-                key={`${c.alt}-duplicate`}
-                src={c.src}
-                alt={c.alt}
-                className="h-16 object-contain mx-8 flex-shrink-0 dark:brightness-90 dark:contrast-110"
-                style={{ maxWidth: 120 }}
-              />
+              <div key={`${c.alt}-duplicate`} className="relative mx-8 flex-shrink-0 flex items-center justify-center">
+                {/* Efecto de luz circular rosada */}
+                <div className="absolute inset-0 w-32 h-20 flex items-center justify-start">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-pink-500/20 to-pink-400/20 dark:from-pink-400/30 dark:to-pink-300/30 blur-xl animate-pulse"></div>
+                </div>
+                {/* Logo */}
+                <img
+                  src={c.src}
+                  alt={c.alt}
+                  className="relative z-10 h-20 object-contain dark:brightness-90 dark:contrast-110 transition-all duration-300 hover:scale-110"
+                  style={{ maxWidth: 120 }}
+                />
+              </div>
             ))}
           </div>
         </div>

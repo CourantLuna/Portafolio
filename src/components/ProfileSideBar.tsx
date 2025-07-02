@@ -4,24 +4,25 @@ const avatar = "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Imagen%2
 
 // Redes sociales
 const socialLinks = [
-  {
-    icon: <i className="fab fa-facebook-f" />,
-    url: "https://facebook.com/",
-    color: "hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-600 dark:text-blue-400",
+   {
+    icon: <i className="fab fa-github" />,
+    url: "https://github.com/CourantLuna",
+    color: "hover:bg-gray-200 dark:hover:bg-white-900/30 text-black dark:text-white-300",
   },
   {
-    icon: <i className="fab fa-twitter" />,
-    url: "https://twitter.com/",
-    color: "hover:bg-blue-50 dark:hover:bg-sky-900/30 text-sky-500 dark:text-sky-400",
+    icon: <i className="fab fa-instagram" />,
+    url: "https://www.instagram.com/courantluna/",
+    color: "hover:bg-pink-100 dark:hover:bg-pink-900/30 text-pink-600 dark:text-pink-400",
   },
   {
-    icon: <i className="fab fa-dribbble" />,
-    url: "https://dribbble.com/",
-    color: "hover:bg-pink-50 dark:hover:bg-pink-900/30 text-pink-400 dark:text-pink-300",
+    icon: <i className="fab fa-x-twitter" />,
+    url: "https://x.com/CourantLuna8",
+    color: "hover:bg-blue-50 dark:hover:bg-white-900/30 text-blue-500 dark:text-white-400",
   },
+ 
   {
     icon: <i className="fab fa-linkedin-in" />,
-    url: "https://linkedin.com/",
+    url: "https://www.linkedin.com/in/heydi-garcia-sanchez-b06783144/",
     color: "hover:bg-blue-100 dark:hover:bg-blue-900/30 text-blue-800 dark:text-blue-300",
   },
 ];
