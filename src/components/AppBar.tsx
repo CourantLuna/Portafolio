@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
 import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "../hooks/useLanguage";
 
 const menuLinks = [
-  { label: "Inicio", icon: <i className="fa-solid fa-house" />, tabIndex: 0 },
-  { label: "Curriculum", icon: <i className="fa-solid fa-file-alt" />, tabIndex: 1 },
-  { label: "Trabajos", icon: <i className="fa-solid fa-cube" />, tabIndex: 2 },
-  { label: "Blogs", icon: <i className="fa-brands fa-blogger" />, tabIndex: 3 },
-  { label: "Contacto", icon: <i className="fa-regular fa-address-book" />, tabIndex: 4 },
+  { label: "nav.home", icon: <i className="fa-solid fa-house" />, tabIndex: 0 },
+  { label: "nav.resume", icon: <i className="fa-solid fa-file-alt" />, tabIndex: 1 },
+  { label: "nav.works", icon: <i className="fa-solid fa-cube" />, tabIndex: 2 },
+  { label: "nav.blogs", icon: <i className="fa-brands fa-blogger" />, tabIndex: 3 },
+  { label: "nav.contact", icon: <i className="fa-regular fa-address-book" />, tabIndex: 4 },
 ];
 
 export default function AppBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   // Estado para el theme
   const [theme, setTheme] = useState<"light" | "dark">("light");
+  // Hook de idiomas
+  const { t } = useLanguage();
 
   // Manejar navegación mobile
   const handleMobileNavigation = (tabIndex: number, tabLabel: string) => {
@@ -61,11 +65,14 @@ export default function AppBar() {
         </div>
         {/* Acciones derecha */}
         <div className="flex items-center gap-3">
+          {/* Language toggle */}
+          <LanguageToggle />
+          
           {/* Theme toggle */}
           <button
             className="w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-gradient-to-r hover:from-pink-500 hover:to-pink-400 dark:hover:from-pink-600 dark:hover:to-pink-500 text-xl transition-all duration-300 shadow-sm dark:shadow-pink-500/10 hover:shadow-lg hover:shadow-pink-500/30 group"
             onClick={toggleTheme}
-            aria-label="Cambiar modo"
+            aria-label={t('theme.toggle')}
           >
             {theme === "dark" ? (
               <FaSun className="text-yellow-400 group-hover:text-white transition-colors duration-300" />
@@ -77,7 +84,7 @@ export default function AppBar() {
           <button
             className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-r from-pink-400 to-pink-500 dark:from-pink-500 dark:to-pink-600 text-white text-xl lg:hidden shadow-lg dark:shadow-pink-500/30 hover:scale-105 transition-all duration-300"
             onClick={() => setMenuOpen(true)}
-            aria-label="Abrir menú"
+            aria-label={t('menu.open')}
           >
             <FaBars />
           </button>
@@ -90,14 +97,14 @@ export default function AppBar() {
           <div
             className="absolute inset-0 bg-black/30 dark:bg-black/50"
             onClick={() => setMenuOpen(false)}
-            aria-label="Cerrar menú"
+            aria-label={t('menu.close')}
           />
           <nav className="w-full bg-gray-50 dark:bg-gray-900/95 dark:border-l dark:border-pink-500/20 shadow-xl h-full flex flex-col gap-6 relative animate-slide-down backdrop-blur-md">
             {/* Botón cerrar */}
             <button
               className="absolute top-4 right-4 w-9 h-9 rounded-full flex items-center justify-center bg-gray-200 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xl hover:scale-110 transition-all duration-300"
               onClick={() => setMenuOpen(false)}
-              aria-label="Cerrar menú"
+              aria-label={t('menu.close')}
             >
               <FaTimes />
             </button>
@@ -106,11 +113,11 @@ export default function AppBar() {
               {menuLinks.map((link) => (
                 <li key={link.label}>
                   <button
-                    onClick={() => handleMobileNavigation(link.tabIndex, link.label)}
+                    onClick={() => handleMobileNavigation(link.tabIndex, t(link.label))}
                     className="w-full flex items-center gap-3 px-4 py-3 transition text-gray-400 dark:text-gray-300 hover:bg-gradient-to-r hover:from-pink-400 hover:to-pink-500 dark:hover:from-pink-500 dark:hover:to-pink-600 hover:text-white font-semibold text-left"
                   >
                     {link.icon}
-                    <span>{link.label}</span>
+                    <span>{t(link.label)}</span>
                   </button>
                 </li>
               ))}

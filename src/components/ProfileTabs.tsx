@@ -1,4 +1,5 @@
 // src/components/ProfileTabs.tsx
+import { useLanguage } from "../hooks/useLanguage";
 
 interface ProfileTabsProps {
   activeTab: number;
@@ -8,7 +9,7 @@ interface ProfileTabsProps {
 // Puedes cambiar los iconos SVG o usar react-icons/fontawesome si prefieres.
 const tabs = [
   {
-    label: "Inicio",
+    label: "nav.home",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l9-9 9 9M9 21V9h6v12" />
@@ -16,7 +17,7 @@ const tabs = [
     ),
   },
   {
-    label: "Curriculum",
+    label: "nav.resume",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <rect x="6" y="4" width="12" height="16" rx="2" stroke="currentColor" />
@@ -26,7 +27,7 @@ const tabs = [
     ),
   },
   {
-    label: "Trabajos",
+    label: "nav.works",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <path d="M4 7V4a1 1 0 011-1h3m7 0h3a1 1 0 011 1v3M4 7h16m-8 0v13" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"/>
@@ -34,7 +35,7 @@ const tabs = [
     ),
   },
   {
-    label: "Blogs",
+    label: "nav.blogs",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" />
@@ -43,7 +44,7 @@ const tabs = [
     ),
   },
   {
-    label: "Contacto",
+    label: "nav.contact",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
         <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" />
@@ -54,6 +55,8 @@ const tabs = [
 ];
 
 export default function ProfileTabs({ activeTab, setActiveTab }: ProfileTabsProps) {
+  const { t } = useLanguage();
+  
   return (
     <div className="hidden lg:block w-full">
       <div className="bg-white dark:bg-gray-900/90 dark:border dark:border-pink-500/20 dark:shadow-2xl dark:shadow-pink-500/10 rounded-3xl px-8 py-8 shadow-lg backdrop-blur-sm w-full">
@@ -71,7 +74,7 @@ export default function ProfileTabs({ activeTab, setActiveTab }: ProfileTabsProp
               `}
             >
               {tab.icon}
-              <span className="text-xs mt-1">{tab.label}</span>
+              <span className="text-xs mt-1">{t(tab.label)}</span>
             </button>
           ))}
         </div>

@@ -1,13 +1,16 @@
 import { FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { useLanguage } from "../hooks/useLanguage";
 
 export default function Contact() {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full flex flex-col gap-8 dark:text-gray-100">
       {/* Header */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
-          Contacto
-          <span className="flex-1 border-t border-pink-400 dark:border-pink-300 ml-3" />
+          {t('contact.title')}
+          <span className="w-[200px] border-t-3 border-pink-400 dark:border-pink-300" />
         </h2>
       </section>
       {/* Cards de contacto */}
@@ -18,7 +21,7 @@ export default function Contact() {
             <FaPhoneAlt className="text-pink-600 dark:text-pink-300 text-2xl" />
           </div>
           <div>
-            <div className="font-bold text-gray-700 dark:text-gray-100 text-base">Teléfono</div>
+            <div className="font-bold text-gray-700 dark:text-gray-100 text-base">{t('profile.phone')}</div>
             <div className="text-gray-600 dark:text-gray-300 text-sm">
               +1 829 512 4461<br />
             </div>
@@ -30,7 +33,7 @@ export default function Contact() {
             <FaEnvelope className="text-blue-700 dark:text-blue-300 text-2xl" />
           </div>
           <div>
-            <div className="font-bold text-gray-700 dark:text-gray-100 text-base">Correo</div>
+            <div className="font-bold text-gray-700 dark:text-gray-100 text-base">{t('profile.email')}</div>
             <div className="text-gray-600 dark:text-gray-300 text-sm break-all">
               <a
                 href="mailto:heydi0811@gmail.com"
@@ -45,8 +48,7 @@ export default function Contact() {
       {/* Formulario */}
       <section className="bg-gray-50 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:shadow-lg dark:shadow-pink-500/10 rounded-2xl p-8 mb-4 backdrop-blur-sm">
         <div className="mb-6 text-lg text-gray-700 dark:text-gray-300">
-          ¡Estoy abierta a nuevas oportunidades y colaboraciones!
-          <span className="block font-bold text-gray-900 dark:text-gray-100">Hablemos sobre proyectos de desarrollo, tecnología o branding.</span>
+          {t('contact.subtitle')}
         </div>
         <form
           action="mailto:heydi0811@gmail.com"
@@ -55,7 +57,7 @@ export default function Contact() {
           className="flex flex-col gap-5"
         >
           <div>
-            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Nombre *</label>
+            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">{t('contact.name')} *</label>
             <input
               name="name"
               type="text"
@@ -64,7 +66,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Email *</label>
+            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">{t('contact.email')} *</label>
             <input
               name="email"
               type="email"
@@ -73,7 +75,7 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">Mensaje *</label>
+            <label className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">{t('contact.message')} *</label>
             <textarea
               name="message"
               required
@@ -85,13 +87,13 @@ export default function Contact() {
             type="submit"
             className="w-full py-3 bg-gradient-to-r from-pink-500 to-pink-400 dark:from-pink-600 dark:to-pink-500 text-white rounded-xl text-center font-semibold shadow-md dark:shadow-pink-500/30 hover:from-pink-600 hover:to-pink-500 dark:hover:from-pink-700 dark:hover:to-pink-600 transition-all duration-300 hover:scale-105"
           >
-            Enviar mensaje
+            {t('contact.send')}
           </button>
         </form>
       </section>
       {/* Footer */}
       <footer className="text-center text-gray-400 dark:text-gray-500 text-xs pt-8">
-        © {new Date().getFullYear()} Heydi García | Portafolio Personal
+        {t('footer.copyright')}
       </footer>
     </div>
   );

@@ -1,5 +1,6 @@
 // src/components/Works.tsx
 import { useState } from "react";
+import { useLanguage } from "../hooks/useLanguage";
 
 // Puedes cambiar las imágenes por reales, o usar placeholders temporales
 const works = [
@@ -68,12 +69,21 @@ desc: "Desarrollo full stack para plataforma interna de DIDA, con enfoque en fro
   },
 ];
 
-const categories = ["Todos", "Branding", "Web App", "Logo", "Prototipado", "Frontend", "Identidad"];
-
 export default function Works() {
+  const { t } = useLanguage();
   const [selected, setSelected] = useState("Todos");
 
-  const filtered = selected === "Todos"
+  const categories = [
+    t('works.filter.all'),
+    "Branding", 
+    "Web App", 
+    "Logo", 
+    t('works.filter.prototyping'), 
+    "Frontend", 
+    t('works.filter.identity')
+  ];
+
+  const filtered = selected === t('works.filter.all')
     ? works
     : works.filter(work => work.tags.includes(selected) || work.type === selected);
 
@@ -82,7 +92,7 @@ export default function Works() {
       {/* Header */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
-          Portafolio
+          {t('works.title')}
           <span className="w-[200px] border-t-3 border-pink-400 dark:border-pink-300" />
         </h2>
       </section>

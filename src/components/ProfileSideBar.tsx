@@ -2,6 +2,8 @@
 // Imagen de perfil (usa la tuya, estática o desde assets)
 const avatar = "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/Imagen%20Perfil%20Heydi-wdvTY9giOH5eQ2lRdG9M4ct0tOMrB8.png";
 
+import { useLanguage } from "../hooks/useLanguage";
+
 // Redes sociales
 const socialLinks = [
    {
@@ -28,6 +30,8 @@ const socialLinks = [
 ];
 
 export default function ProfileSidebar() {
+  const { t } = useLanguage();
+  
   return (
     <aside className="mt-70 lg:mt-30 w-full mx-auto bg-white dark:bg-gray-900/90 dark:border dark:border-pink-500/20 dark:shadow-2xl dark:shadow-pink-500/10 lg:rounded-3xl shadow-2xl px-6 py-8 flex flex-col items-center relative z-10 gap-2 backdrop-blur-sm">
       {/* Efecto de luz de fondo en modo dark */}
@@ -46,7 +50,7 @@ export default function ProfileSidebar() {
       
       {/* Nombre y Subtítulo */}
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-2 relative z-10">Heydi García</h2>
-      <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm relative z-10">Desarrolladora Full Stack</p>
+      <p className="text-gray-500 dark:text-gray-400 mb-5 text-sm relative z-10">{t('profile.title')}</p>
       
       {/* Redes sociales */}
       <div className="flex gap-3 mb-6 relative z-10">

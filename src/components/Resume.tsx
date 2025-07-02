@@ -1,5 +1,6 @@
 // src/components/Resume.tsx
 import { FaGraduationCap, FaBriefcase, FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
+import { useLanguage } from "../hooks/useLanguage";
 
 const education = [
   {
@@ -58,100 +59,101 @@ const knowledges = [
 ];
 
 export default function Resume() {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full flex flex-col gap-10 dark:text-gray-100">
-      {/* Título principal */}
+      {/* EDUCACIÓN */}
       <section>
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
-          Resume
-          <span className="w-[200px] border-t-3 border-pink-400 dark:border-pink-300" />
+          <FaGraduationCap className="text-pink-500 dark:text-pink-400" />
+          {t('resume.education.title')}
         </h2>
-      </section>
-      {/* Educación y experiencia */}
-      <section className="grid md:grid-cols-2 gap-8 mb-10">
-        {/* Educación */}
-        <div>
-          <div className="flex items-center gap-3 mb-5">
-            <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100">
-              <FaGraduationCap className="text-pink-400 dark:text-pink-300" />
-              Educación
-            </h3>
-            <a
-              href="https://drive.google.com/drive/folders/1lVSorwwVwxJ7Nkrn4U95g7dYAJVXnzH-?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-pink-400 to-pink-500 dark:from-pink-500 dark:to-pink-600 text-white text-xs font-semibold rounded-full shadow-lg hover:shadow-pink-200 dark:hover:shadow-pink-500/30 hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
-            >
-              <FaCertificate className="text-[10px]" />
-              Certificados Verificados
-              <FaExternalLinkAlt className="text-[8px] opacity-70" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 dark:bg-yellow-300 rounded-full animate-ping"></div>
-            </a>
-          </div>
-          <div className="flex flex-col gap-4">
-            {education.map((ed, i) => (
-              <div key={i} className={`rounded-xl p-4 ${ed.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
-                <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ed.date}</div>
-                <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{ed.title}</div>
-                <div className="text-gray-700 dark:text-gray-300">{ed.place}</div>
-              </div>
-            ))}
-          </div>
+        <div className="flex items-center gap-3 mb-5">
+          <a
+            href="https://drive.google.com/drive/folders/1lVSorwwVwxJ7Nkrn4U95g7dYAJVXnzH-?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex items-center gap-1 px-3 py-1 bg-gradient-to-r from-pink-400 to-pink-500 dark:from-pink-500 dark:to-pink-600 text-white text-xs font-semibold rounded-full shadow-lg hover:shadow-pink-200 dark:hover:shadow-pink-500/30 hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-pulse hover:animate-none"
+          >
+            <FaCertificate className="text-[10px]" />
+            Certificados Verificados
+            <FaExternalLinkAlt className="text-[8px] opacity-70" />
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 dark:bg-yellow-300 rounded-full animate-ping"></div>
+          </a>
         </div>
-        {/* Experiencia */}
-        <div>
-          <h3 className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">
-            <FaBriefcase className="text-pink-400 dark:text-pink-300" />
-            Experiencia
-          </h3>
-          <div className="flex flex-col gap-4">
-            {experience.map((ex, i) => (
-              <div key={i} className={`rounded-xl p-4 ${ex.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
-                <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ex.date}</div>
-                <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{ex.title}</div>
-                <div className="text-gray-700 dark:text-gray-300">{ex.place}</div>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col gap-4">
+          {education.map((ed, i) => (
+            <div key={i} className={`rounded-xl p-4 ${ed.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ed.date}</div>
+              <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{ed.title}</div>
+              <div className="text-gray-700 dark:text-gray-300">{ed.place}</div>
+            </div>
+          ))}
         </div>
       </section>
-      {/* Skills y Conocimientos */}
-      <section className="grid md:grid-cols-2 gap-8 mb-10">
-        {/* Skills */}
-        <div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Habilidades</h3>
-          <div className="flex flex-col gap-4">
-            {skills.map((sk, i) => (
-              <div key={i}>
-                <div className="flex justify-between items-center">
-                  <span className="font-medium text-gray-700 dark:text-gray-300">{sk.label}</span>
-                  <span className="font-bold text-pink-400 dark:text-pink-300">{sk.value}%</span>
+
+      {/* EXPERIENCIA */}
+      <section>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
+          <FaBriefcase className="text-blue-500 dark:text-blue-400" />
+          {t('resume.experience.title')}
+        </h2>
+        <div className="flex flex-col gap-4">
+          {experience.map((ex, i) => (
+            <div key={i} className={`rounded-xl p-4 ${ex.bg} shadow-sm dark:backdrop-blur-sm h-32 flex flex-col items-start gap-1 transition-all duration-300 hover:scale-105 dark:hover:shadow-2xl`}>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-semibold">{ex.date}</div>
+              <div className="font-bold text-lg text-gray-800 dark:text-gray-100">{ex.title}</div>
+              <div className="text-gray-700 dark:text-gray-300">{ex.place}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* HABILIDADES */}
+      <section>
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 flex items-center gap-4">
+          <FaCertificate className="text-violet-500 dark:text-violet-400" />
+          {t('resume.skills.title')}
+        </h2>
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
+          {/* Skills */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Habilidades</h3>
+            <div className="flex flex-col gap-4">
+              {skills.map((sk, i) => (
+                <div key={i}>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium text-gray-700 dark:text-gray-300">{sk.label}</span>
+                    <span className="font-bold text-pink-400 dark:text-pink-300">{sk.value}%</span>
+                  </div>
+                  <div className="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-700 mt-1">
+                    <div
+                      className={`h-2 rounded-full ${sk.color} transition-all dark:shadow-sm`}
+                      style={{ width: `${sk.value}%` }}
+                    />
+                  </div>
                 </div>
-                <div className="w-full h-2 rounded-full bg-gray-200 dark:bg-gray-700 mt-1">
-                  <div
-                    className={`h-2 rounded-full ${sk.color} transition-all dark:shadow-sm`}
-                    style={{ width: `${sk.value}%` }}
-                  />
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-        {/* Conocimientos */}
-        <div>
-          <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Conocimientos</h3>
-          <div className="flex flex-wrap gap-3">
-            {knowledges.map((k, i) => (
-              <span
-                key={i}
-                className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:text-gray-200 text-gray-700 text-sm font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:hover:shadow-lg dark:hover:shadow-pink-500/20"
-              >
-                {k}
-              </span>
-            ))}
+          {/* Conocimientos */}
+          <div>
+            <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-5">Conocimientos</h3>
+            <div className="flex flex-wrap gap-3">
+              {knowledges.map((k, i) => (
+                <span
+                  key={i}
+                  className="px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800/50 dark:border dark:border-pink-500/20 dark:text-gray-200 text-gray-700 text-sm font-medium backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:hover:shadow-lg dark:hover:shadow-pink-500/20"
+                >
+                  {k}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
+
       {/* Footer */}
       <footer className="text-center text-gray-400 dark:text-gray-500 text-xs pt-8">
         © {new Date().getFullYear()} Heydi García | Portafolio Personal

@@ -3,6 +3,7 @@
 import React from "react";
 import { createPortal } from "react-dom";
 import { FaTimes } from "react-icons/fa";
+import { useLanguage } from "../hooks/useLanguage";
 
 interface Blog {
   date: string;
@@ -19,6 +20,8 @@ interface BlogModalProps {
 }
 
 export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
+  const { t } = useLanguage();
+  
   if (!open || !blog) return null;
 
   // Función para cerrar modal al hacer clic en el backdrop
@@ -42,7 +45,7 @@ export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center bg-gray-100 dark:bg-gray-800 hover:bg-gradient-to-r hover:from-pink-500 hover:to-pink-400 dark:hover:from-pink-600 dark:hover:to-pink-500 text-gray-600 dark:text-gray-300 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg hover:shadow-pink-500/30 group hover:scale-110"
-            aria-label="Cerrar modal"
+            aria-label={t('modal.close')}
           >
             <FaTimes className="text-lg group-hover:text-white transition-colors duration-300" />
           </button>
@@ -79,13 +82,13 @@ export default function BlogModal({ open, onClose, blog }: BlogModalProps) {
           <div className="mt-8 pt-6 border-t border-gray-200 dark:border-pink-500/20">
             <div className="flex items-center justify-between">
               <div className="text-sm text-gray-500 dark:text-gray-400">
-                ¿Te gustó este artículo? ¡Compártelo!
+                {t('modal.shareText')}
               </div>
               <button
                 onClick={onClose}
                 className="px-6 py-2 bg-gradient-to-r from-pink-500 to-pink-400 dark:from-pink-600 dark:to-pink-500 text-white rounded-lg font-semibold shadow-md dark:shadow-pink-500/30 hover:from-pink-600 hover:to-pink-500 dark:hover:from-pink-700 dark:hover:to-pink-600 transition-all duration-300 hover:scale-105"
               >
-                Cerrar
+                {t('modal.close')}
               </button>
             </div>
           </div>
