@@ -30,6 +30,7 @@ const clients = [
   { src:"https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-plastidel-WyEQlW1B8XcLtcpNF6e1iqiIVadJmD.png", alt:"Plastidel" },
   { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-robotdo-MywisZeaRNbKeXtYQCgcTjLl0GT7pW.png",alt: "RobotDo" },
   {src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-trebollrd-9Z61eoJml8j3i35D2xyh97DW42gEJV.png", alt: "Treboll RD" },
+  { src: "https://5dtcgximnyumpv2u.public.blob.vercel-storage.com/logo-zerohunger-uDBUo2Txebixek1gCfAW0wy6cs7zMc.png", alt: "ZeroHunger" },
 ];
 
 const skills = [
